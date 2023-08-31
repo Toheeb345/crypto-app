@@ -27,9 +27,9 @@ const Filters = () => {
 
 
     return (
-        <div className="w-full h-12 border-2 border-gray-100 rounded-lg flex items-center justify-between relative">
+        <div className="w-full h-12 lg:border-2 lg:border-gray-100 rounded-lg flex items-center lg:justify-between relative flex-wrap lg:flex-nowrap justify-center gap-5">
             <Search />
-            <div className=" flex mr-7 gap-10">
+            <div className=" flex gap-5 flex-wrap">
             <form className=" relative flex items-center font-nunitio" onSubmit={handleCurrencySubmit}>
                 <label htmlFor="currency" className=" relative flex justify-center items-center mr-2 font-bold tracking-wide">currency:</label>
 
@@ -42,7 +42,7 @@ const Filters = () => {
 
 
             <label className=" relative flex items-center justify-center">
-                <span className=" font-bold mr-2">sort by: </span>
+                <span className=" font-bold mr-2 whitespace-nowrap">sort by: </span>
                 <select name="sortby" className=" rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize outline-0" onClick={handleSort}>
                     <option value="market_cap_desc">market cap desc</option>
 
@@ -60,9 +60,8 @@ const Filters = () => {
 
                     <option value="id_desc">id desc</option>
                 </select>
-                <img className=" w-[1rem] absolute right-1 top-2 pointer-events-auto h-auto " src={selectIcon} alt="submit" />
             </label>
-            <button className=" w-8 ml-4 hover:scale-110 transition-all ease-in-out relative right-0 top-0" onClick={resetFunction}>
+            <button className=" w-8 hover:scale-110 transition-all ease-in-out" onClick={resetFunction}>
 
             <svg
     xmlns="http://www.w3.org/2000/svg"

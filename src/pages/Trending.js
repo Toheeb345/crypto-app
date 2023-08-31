@@ -11,7 +11,7 @@ const Trending = () => {
 
     return (
         <section className=" w-[80%] h-full flex flex-col mt-16 mb-24 relative">
-            <div className=" flex flex-wrap justify-evenly w-full min-h-[60vh] py-8 border border-gray-100 rounded">
+            <div className=" flex flex-col md:flex-row items-center flex-wrap md:justify-around w-full min-h-[60vh] py-8 border border-gray-100 rounded gap-10">
 
                 {
                     trendData && trendData.map(coin => 

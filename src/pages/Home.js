@@ -13,7 +13,7 @@ const Home = () => {
             <TrendingProvider>
                 <StorageProvider>
                     <main className=" w-full h-full flex flex-col justify-center first-letter:content-center items-center relative text-white font-nunitio">
-            <div className=" w-screen h-full bg-gray-300 fixed -z-10 top-0" />
+            <div className=" w-full h-full bg-gray-300 fixed -z-10 top-0" />
                 <Logo />
                 <Navigation /> 
 
