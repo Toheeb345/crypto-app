@@ -48,7 +48,7 @@ import Chart from './Chart';
     {
     data ? 
 
-    <div className=' flex items-center justify-between h-full w-full p-4'>
+    <div className=' flex items-center justify-between h-full w-full p-4 flex-col sm:flex-row'>
         <div className=" flex flex-col w-[45%] h-full pr-2 ">
             <div className=" flex w-full items-center gap-5"> 
                 <img className=' w-12 h-12' src={data.image.large} alt={data.id} />

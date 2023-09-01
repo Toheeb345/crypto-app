@@ -11,7 +11,7 @@ const TrendingCoin = ({data}) => {
 
 
   return (
-    <ul className=' w-[300px] bg-gray-200 last:mb-0 rounded-br-3xl rounded-tl-3xl p-4 relative cursor-pointer list-disc hover:bg-cyan hover:bg-opacity-30' onClick={() => getCoinDetails(data.id)}>
+    <ul className=' max-w-[300px] w-full bg-gray-200 last:mb-0 rounded-br-3xl rounded-tl-3xl p-4 relative cursor-pointer list-disc hover:bg-cyan hover:bg-opacity-30' onClick={() => getCoinDetails(data.id)}>
         {data ? 
 <>
             <h3 className=' text-base flex items-center gap-3'>
@@ -26,7 +26,7 @@ const TrendingCoin = ({data}) => {
             </h3>
 
             <h3 className=' text-base flex items-center gap-3'>
-                <span className=' text-gray-100 capitalize'>price (in btc):</span>
+                <span className=' text-gray-100 capitalize'>price {"in btc"}:</span>
                 <span className=' text-cyan'>
                     {new Intl.NumberFormat("en-IN",{
                         style: "currency",

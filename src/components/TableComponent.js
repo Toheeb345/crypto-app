@@ -46,7 +46,7 @@ let {cryptoData, currency} = useContext(CryptoContext);
 
 return (
     <>
-<div className=" flex flex-col mt-9 border border-gray-100 rounded">
+<div className=" flex flex-col mt-1 md:mt-8 border border-gray-100 rounded">
 
 {
     cryptoData ? 
@@ -56,8 +56,8 @@ return (
         <th className=" py-1">asset</th>
         <th className=" py-1">name</th>
         <th className=" py-1">price</th>
-        <th className=" py-1">total volume</th>
-        <th className=" py-1">market cap exchange</th>
+        <th className=" py-1 hidden md:table-cell">total volume</th>
+        <th className=" py-1 hidden md:table-cell">market cap exchange</th>
         <th className=" py-1 hidden lg:table-cell">1H</th>
         <th className=" py-1 hidden lg:table-cell">24H</th>
         <th className=" py-1 hidden lg:table-cell">7D</th>
@@ -67,7 +67,7 @@ return (
     {
         cryptoData.map(data => {
             return(
-            <tr key={data.id} className=" text-center text-base border-b border-gray-100 hover:bg-gray-200 last:border-b-0">
+            <tr key={data.id} className=" text-center text-base border-b border-gray-100 hover:bg-gray-200 last:border-b-0 ">
                 <td className=" py-4 flex items-center uppercase">
                     <SaveBtn data={data} />
                     <img className=" w-[1.2rem] h-[1.2rem] mx-1.5" src={data.image} alt={data.name} />
@@ -83,8 +83,8 @@ return (
                         currency: currency
                     }).format(data.current_price)
                 }</td>
-                <td className=" py-4">{data.total_volume}</td>
-                <td className=" py-4">{data.market_cap_change_percentage_24h}%</td>
+                <td className=" py-4 hidden md:table-cell">{data.total_volume}</td>
+                <td className=" py-4 hidden md:table-cell">{data.market_cap_change_percentage_24h}%</td>
                 <td className={
                     data.price_change_percentage_1h_in_currency > 0 ? ' text-green py-4 hidden lg:table-cell' : 'text-red py-4 hidden lg:table-cell'
                 }>{Number(data.price_change_percentage_1h_in_currency).toFixed(2)}</td>
@@ -109,8 +109,8 @@ return (
 }
 </div>
 
-<div className=" flex items-center justify-between mt-4 capitalize h-[2rem]">
-    <span>Data provided by <a className=" text-cyan" href="http://www.coingecko.com" rel="noreferrer" target={"_blank"}>CoinGecko</a></span>
+<div className=" flex flex-col-reverse md:flex-row items-center justify-between md:mt-4 capitalize gap-4">
+    <span className=" relative bottom-0 md:static">Data provided by <a className=" text-cyan" href="http://www.coingecko.com" rel="noreferrer" target={"_blank"}>CoinGecko</a></span>
     <Pagination />
 </div>
 </>

@@ -73,9 +73,9 @@ const Pagination = () => {
 
 if (cryptoData && cryptoData.length >= perPage) {
     return (
-        <div className=" flex items-center">
+        <div className=" flex md:flex-row flex-wrap items-center justify-center gap-2">
             <PerPage />
-            <ul className=" flex items-center justify-end text-sm">
+            <ul className=" flex items-center text-sm">
                 <li className=" flex items-center">
                     <button className=" outline-0 hover:text-cyan w-8" onClick={prev}>
                     <img className=" w-full h-auto rotate-180" src={paginationarrow} alt="left" />
