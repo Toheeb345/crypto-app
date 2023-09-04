@@ -1,9 +1,9 @@
-    import React from 'react'
-    import  ReactDOM from 'react-dom'
-    import { useNavigate, useParams } from 'react-router-dom'
-    import { CryptoContext } from '../context/CryptoContext';
-    import { useLayoutEffect, useContext } from 'react';
-    import { useState, useEffect } from 'react';
+import React from 'react'
+import  ReactDOM from 'react-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { CryptoContext } from '../context/CryptoContext';
+import { useLayoutEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import Chart from './Chart';
 
 
