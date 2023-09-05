@@ -44,7 +44,7 @@ import Chart from './Chart';
 
     return ReactDOM.createPortal (
     <div className=' fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex items-center justify-center font-nunitio ' onClick={close}>
-    <div className=" w-[65%] h-[85%] bg-gray-300 overflow-y-scroll bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
+    <div className=" w-[65%] h-[85%] bg-gray-300 overflow-y-scroll md:overflow-y-hidden bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
     {
     data ? 
 
@@ -222,7 +222,7 @@ import Chart from './Chart';
     </div>
 
 
-        <div className=" flex flex-col w-full md:w-[55%] md:pl-3">
+        <div className=" flex flex-col w-full h-full md:w-[55%] md:pl-3">
             <Chart id={data.id} />
 
             <div className=" flex flex-col mt-24 md:mt-4 gap-3">
