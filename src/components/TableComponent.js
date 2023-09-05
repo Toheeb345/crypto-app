@@ -53,8 +53,8 @@ return (
     <table className=" w-full table-auto">
     <thead className=" capitalize text-base text-gray-100 font-medium border-b border-gray-100">
     <tr className="">
-        <th className=" py-1">asset</th>
-        <th className=" py-1">name</th>
+        <th className=" py-1 text-start md:text-center pl-10 md:pl-0">asset</th>
+        <th className=" py-1 hidden md:table-cell">name</th>
         <th className=" py-1">price</th>
         <th className=" py-1 hidden md:table-cell">total volume</th>
         <th className=" py-1 hidden md:table-cell">market cap exchange</th>
@@ -74,7 +74,7 @@ return (
                     <span>
                     <Link to={`/${data.id}`} className=" cursor-pointer">{data.symbol}</Link></span>
                 </td>
-                <td className=" py-4">
+                <td className=" py-4 hidden md:table-cell">
                     <Link to={`/${data.id}`} className=" cursor-pointer">{data.name}</Link>
                 </td>
                 <td className=" py-4">{
