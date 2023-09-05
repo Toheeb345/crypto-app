@@ -27,10 +27,10 @@ const Filters = () => {
 
 
     return (
-        <div className="w-full py-2 lg:border-2 lg:border-gray-100 rounded-lg flex items-center lg:justify-between relative flex-wrap lg:flex-nowrap justify-center gap-5 px-3">
+        <div className="w-96 md:w-full py-2 lg:border-2 mx-auto lg:border-gray-100 rounded-lg flex items-center lg:justify-between relative flex-wrap lg:flex-nowrap justify-center gap-5 px-3 ">
             <Search />
-            <div className=" flex gap-5 flex-wrap lg:flex-nowrap">
-            <form className=" relative flex items-center font-nunitio" onSubmit={handleCurrencySubmit}>
+            <div className=" flex gap-5 flex-wrap lg:flex-nowrap relative">
+            <form className=" relative flex items-center font-nunitio order-1 md:order-[0]" onSubmit={handleCurrencySubmit}>
                 <label htmlFor="currency" className=" relative flex justify-center items-center mr-2 font-bold tracking-wide">currency:</label>
 
                 <input type="text" name="currency" className=" w-16 rounded bg-gray-200 placeholder:text-gray-100 pl-2 outline-0 border border-gray-200 focus:border-cyan leading-4" required placeholder="usd" ref={currencyRef} />
@@ -41,9 +41,9 @@ const Filters = () => {
             </form>
 
 
-            <label className=" relative flex items-center justify-center">
+            <label className=" relative flex items-center md:justify-center justify-between w-full md:w-auto">
                 <span className=" font-bold mr-2 whitespace-nowrap">sort by: </span>
-                <select name="sortby" className=" rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize outline-0" onClick={handleSort}>
+                <select name="sortby" className=" rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize outline-0 flex-1" onClick={handleSort}>
                     <option value="market_cap_desc">market cap desc</option>
 
                     <option value="market_cap_asc">market cap asc</option>
@@ -61,7 +61,7 @@ const Filters = () => {
                     <option value="id_desc">id desc</option>
                 </select>
             </label>
-            <button className=" w-8 hover:scale-110 transition-all ease-in-out" onClick={resetFunction}>
+            <button className=" w-8 hover:scale-110 transition-all ease-in-out absolute right-0 md:static top-11" onClick={resetFunction}>
 
             <svg
     xmlns="http://www.w3.org/2000/svg"
