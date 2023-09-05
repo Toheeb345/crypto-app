@@ -43,8 +43,8 @@ import Chart from './Chart';
     }
 
     return ReactDOM.createPortal (
-    <div className=' fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex items-center justify-center font-nunitio overflow-scroll' onClick={close}>
-    <div className=" w-[65%] h-[85%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
+    <div className=' fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex items-center justify-center font-nunitio ' onClick={close}>
+    <div className=" w-[65%] h-[85%] bg-gray-300 overflow-y-scroll bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
     {
     data ? 
 
@@ -137,7 +137,7 @@ import Chart from './Chart';
             new Intl.NumberFormat("en-IN",{
             style: "currency",
             currency: currency,
-            minimumFractionDigits: 5
+            minimumFractionDigits: 2
         }).format(data.market_data.low_24h[currency])}
                 </h2>
             </div>
@@ -150,7 +150,7 @@ import Chart from './Chart';
             new Intl.NumberFormat("en-IN",{
             style: "currency",
             currency: currency,
-            minimumFractionDigits: 5
+            minimumFractionDigits: 2
         }).format(data.market_data.high_24h[currency])}
                 </h2>
             </div>
@@ -222,10 +222,10 @@ import Chart from './Chart';
     </div>
 
 
-        <div className=" flex flex-col w-full md:w-[55%] h-full pl-3">
+        <div className=" flex flex-col w-full md:w-[55%] md:pl-3">
             <Chart id={data.id} />
 
-            <div className=" md:flex flex-col mt-4 gap-3 hidden">
+            <div className=" flex flex-col mt-24 md:mt-4 gap-3">
                 <h3 className='text-white'><span className=' capitalize text-gray-100 mr-1'>market cap rank:</span> {data.market_cap_rank} </h3>
 
                 <h3 className='text-white'><span className=' capitalize text-gray-100 mr-1'>coinGecko rank:</span> {data.coingecko_rank} </h3>
@@ -237,7 +237,7 @@ import Chart from './Chart';
 
 
 {/* coin social links */}
-        <div className=" absolute md:bottom-8 bottom-0 md:right-8 flex items-center bg-green bg-opacity-30 rounded-tl-xl rounded-br-xl gap-2 px-3 py-2 ">
+        <div className=" absolute md:bottom-8 bottom-0 md:right-8 md:flex items-center bg-green bg-opacity-30 rounded-tl-xl rounded-br-xl gap-2 px-3 py-2 hidden">
 
 
             {data.links.repos_url.github[0] &&
