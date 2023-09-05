@@ -44,7 +44,7 @@ import Chart from './Chart';
 
     return ReactDOM.createPortal (
     <div className=' fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex items-center justify-center font-nunitio overflow-scroll' onClick={close}>
-    <div className=" w-[65%] md:h-[85%] h-full bg-gray-300 bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
+    <div className=" w-[65%] h-[85%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
     {
     data ? 
 
