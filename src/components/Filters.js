@@ -27,7 +27,7 @@ const Filters = () => {
 
 
     return (
-        <div className="w-96 md:w-full py-2 lg:border-2 mx-auto lg:border-gray-100 rounded-lg flex items-center lg:justify-between relative flex-wrap lg:flex-nowrap justify-center gap-5 px-3 ">
+        <div className="w-96 md:w-full max-w-[20em] md:max-w-full py-2 lg:border-2 mx-auto lg:border-gray-100 rounded-lg flex items-center lg:justify-between relative flex-wrap lg:flex-nowrap justify-center gap-5 px-3 ">
             <Search />
             <div className=" flex gap-5 flex-wrap lg:flex-nowrap relative ">
             <form className=" relative flex items-center font-nunitio order-1 md:order-[0]" onSubmit={handleCurrencySubmit}>
