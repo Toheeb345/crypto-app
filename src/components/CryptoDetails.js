@@ -43,20 +43,20 @@ import Chart from './Chart';
     }
 
     return ReactDOM.createPortal (
-    <div className=' fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex items-center justify-center font-nunitio' onClick={close}>
-    <div className=" w-[65%] h-[85%] bg-gray-300 bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
+    <div className=' fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex items-center justify-center font-nunitio overflow-scroll' onClick={close}>
+    <div className=" w-[65%] md:h-[85%] h-full bg-gray-300 bg-opacity-75 rounded-lg text-white relative" onClick={(e) => e.stopPropagation()}>
     {
     data ? 
 
     <div className=' flex items-center justify-between h-full w-full p-4 flex-col sm:flex-row'>
-        <div className=" flex flex-col w-[45%] h-full pr-2 ">
+        <div className=" flex flex-col w-full md:w-[45%] h-full pr-2 gap-4">
             <div className=" flex w-full items-center gap-5"> 
-                <img className=' w-12 h-12' src={data.image.large} alt={data.id} />
-                <h1 className=' text-xl capitalize font-medium'>{data.name}</h1>
+                <img className=' md:w-12 md:h-12 w-8 ' src={data.image.large} alt={data.id} />
+                <h1 className=' text-md md:text-xl capitalize font-medium'>{data.name}</h1>
                 <span className=' text-sm bg-green py-0.5 px-2.5 bg-opacity-25 rounded uppercase'>{data.symbol}</span>
             </div>
 
-            <div className=" flex w-full mt-6">
+            <div className=" flex w-full">
                 <div className=" flex flex-col w-full">
                     <div className=" flex justify-between"><span className=' text-sm capitalize text-gray-100'>price</span>
                     <div className={`text-sm px-1 ml-2 font-medium flex items-center rounded uppercase bg-opacity-25
@@ -82,7 +82,7 @@ import Chart from './Chart';
         </div>
 
 
-        <div className=" flex w-full mt-4 justify-between">
+        <div className=" md:flex hidden w-full justify-between">
             <div className=" flex flex-col gap-0.5">
                 <span className=' text-sm capitalize text-gray-100'>market cap</span>
                 <h2 className=' text-base font-bold'>
@@ -109,7 +109,7 @@ import Chart from './Chart';
             </div>
     </div>
 
-    <div className=" flex w-full mt-4 justify-between flex-col">
+    <div className=" md:flex hidden w-full justify-between">
                 <span className=' text-sm capitalize text-gray-100'>total volume</span>
                 <h2 className=' text-base font-bold'>
                 {       
@@ -122,14 +122,14 @@ import Chart from './Chart';
     </div>
 
 
-    <div className=" flex w-full mt-4 justify-between">
+    <div className=" flex w-full justify-between">
         <HighLowIndicator 
         currentPrice={data.market_data.current_price[currency]} 
         high={data.market_data.high_24h[currency]} 
         low={data.market_data.low_24h[currency]} />
     </div>
 
-    <div className=" flex w-full mt-4 justify-between">
+    <div className=" flex w-full justify-between">
             <div className=" flex flex-col gap-0.5">
                 <span className=' text-sm capitalize text-gray-100'>low 24H</span>
                 <h2 className=' text-base font-bold'>
@@ -156,7 +156,7 @@ import Chart from './Chart';
             </div>
     </div>
 
-    <div className=" flex w-full mt-4 justify-between">
+    <div className="  md:flex hidden w-full justify-between">
             <div className=" flex flex-col gap-0.5">
                 <span className=' text-sm capitalize text-gray-100'>max supply</span>
                 <h2 className=' text-base font-bold'>
@@ -183,7 +183,7 @@ import Chart from './Chart';
             </div>
     </div>
 
-    <div className=" flex w-full mt-4 justify-between">
+    <div className="md:flex hidden w-full justify-between">
         <div className=" flex flex-col gap-2">
             <a target={"_blank"} rel='noreferrer' className=' bg-gray-200 text-sm text-gray-100 px-1.5 py-0.5 rounded' href={data?.links?.homepage[0]}>{data?.links?.homepage[0].substring(0,30)}</a>
             <a target={"_blank"} rel='noreferrer' className=' bg-gray-200 text-sm text-gray-100 px-1.5 py-0.5 rounded' href={data?.links?.blockchain_site[0]}>{data?.links?.blockchain_site[0].substring(0,30)}</a>
@@ -222,10 +222,10 @@ import Chart from './Chart';
     </div>
 
 
-        <div className=" flex flex-col w-[55%] h-full pl-3">
+        <div className=" flex flex-col w-full md:w-[55%] h-full pl-3">
             <Chart id={data.id} />
 
-            <div className=" flex flex-col mt-4 gap-3">
+            <div className=" md:flex flex-col mt-4 gap-3 hidden">
                 <h3 className='text-white'><span className=' capitalize text-gray-100 mr-1'>market cap rank:</span> {data.market_cap_rank} </h3>
 
                 <h3 className='text-white'><span className=' capitalize text-gray-100 mr-1'>coinGecko rank:</span> {data.coingecko_rank} </h3>
@@ -234,7 +234,10 @@ import Chart from './Chart';
             </div>
         </div>
 
-        <div className=" absolute bottom-8 right-8 flex items-center bg-green bg-opacity-30 rounded-tl-xl rounded-br-xl gap-2 px-3 py-2">
+
+
+{/* coin social links */}
+        <div className=" absolute md:bottom-8 bottom-0 md:right-8 flex items-center bg-green bg-opacity-30 rounded-tl-xl rounded-br-xl gap-2 px-3 py-2 ">
 
 
             {data.links.repos_url.github[0] &&
