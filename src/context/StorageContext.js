@@ -38,7 +38,7 @@ export const StorageProvider = ({ children }) => {
 
             const data = await fetch(
                 `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${totalCoins.join(",")}&order=${sortBy}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
-                ).then(res => res.json()).then(json => json);
+                ).then((res) => res.json()).then((json) => json);
 
             console.log(data);
             setSavedData(data);
@@ -49,14 +49,14 @@ export const StorageProvider = ({ children }) => {
     }
 
     const resetSavedResult = () => {
-        getSavedData()
+        getSavedData();
     }
 
     useEffect(() => {
         if (allCoins.length > 0) {
             getSavedData(allCoins);
         } else{
-            setSavedData();
+            setSavedData("");
         }
     }, [allCoins])
     
